@@ -1,0 +1,48 @@
+#!/bin/bash
+
+echo -n "1 переменная = ";
+read a;
+work=0;
+ while [[ work -ne 6 ]];
+do
+echo /n"Действия";
+echo "1.сложение;
+2.вычитание;
+3.произведение;
+4.деление;
+5.вывести результат;
+6.выход";
+echo -n "Действие  ";
+read work;
+#clear;
+case $work in
+1)echo -n "2 переменная = ";
+read b;
+echo -n "$a + $b = ";a=$(($a+$b));
+echo $a;
+;;
+2)
+echo -n "2 переменная = ";
+read b;echo -n "$a - $b = ";a=$(($a-$b));
+echo $a;
+;;
+3)echo -n "2 переменная = ";
+read b;
+echo -n "$a * $b = ";a=$(($a*$b));
+echo $a;
+;;
+4)echo -n "2 переменная = ";
+read b;
+xa=$a/$b;
+xb=$a%b;
+echo -n "$a / $b = ";
+echo $a;  
+;;
+5)clear;
+echo "Результат $a";
+exit 0;
+;;
+6) exit 0;
+;;
+esac
+done
