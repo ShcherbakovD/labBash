@@ -3,7 +3,7 @@
 searchparam="home/work/cron_project/Music"
 
 setMusic() {
-	Musiclist=$(ls /$searchparam/ | grep -n ".mp3")
+	Musiclist=$(ls home/work/| grep -n ".mp3" ".txt")
 	if [[ $Musiclist == "" ]]; then
 		echo "Нет музыки в папке";
 	else

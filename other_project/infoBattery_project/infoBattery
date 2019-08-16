@@ -1,0 +1,17 @@
+#!/bin/bash
+minPower=$1;
+if (( minPower == "0" )); then
+notify-send "Ошибка!" "Введите контролируемый порог заряда";
+exit 0;
+fi
+#while (true) 
+do 
+levelBattery=$(cat /sys/class/power_supply/BAT0/capacity)
+if [[ $levelBattery -lt $minPower ]]; then
+notify-send "Опастность!  Заряд батерии ниже $minPower %" "`date`";
+exit 0;
+else 
+notify-send "Заряд батерии составляет $levelBattery %" "`date`";
+fi
+exit 0;
+#done
